@@ -2,9 +2,12 @@
 
 A Dockerfile for downloading and deploying the most recent version of https://github.com/fiorix/freegeoip. No quota restrictions enabled. License applies to the Dockerfile alone and should not translate to any software downloaded or executed during use.
 
-##Installation
-Deploying freegeoip is a breeze with Docker, our only direct and on-box dependency. If you haven't already go get started at https://www.docker.io/gettingstarted/#h_installation.
+##Installation from Index
+Deploying freegeoip is a breeze with Docker, our only direct and on-box dependency. If you haven't already go get started at https://www.docker.io/gettingstarted/#h_installation. Docker is a social deployment platform. By default it is connected to the central Docker index. This container is available through the Docker index under the tag, "allingeek/docker-freegeoip." To deploy this image, you need only tell docker to run it (replace <BARE-HOST-PORT> with the actual TCP port number you want to run the service on):
 
+	sudo docker run -d -p <BARE-HOST-PORT>:8080 allingeek/docker-freegeoip
+
+##Installation the Long Way
 Once Docker is installed on your host machine, clone this repo locally and build the docker image:
 
 	git clone git@github.com:allingeek/docker-freegeoip.git
