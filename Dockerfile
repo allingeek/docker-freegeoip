@@ -1,5 +1,3 @@
-# Thrift Compiler
-# DOCKER-VERSION 0.7.6
 FROM	ubuntu:latest
 MAINTAINER Jeff Nickoloff "jeff@allingeek.com"
 
@@ -19,6 +17,7 @@ ENV	GOPATH /freegeoip
 WORKDIR /freegeoip
 RUN	go get github.com/fiorix/freegeoip
 WORKDIR /freegeoip/src/github.com/fiorix/freegeoip
+RUN	sed -i 's/xheaders="false"/xheaders="true"/g' freegeoip.conf
 RUN	go build
 
 WORKDIR /freegeoip/src/github.com/fiorix/freegeoip/db
