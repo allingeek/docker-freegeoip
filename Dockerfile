@@ -16,6 +16,7 @@ RUN	mkdir /freegeoip
 ENV	GOPATH /freegeoip
 WORKDIR /freegeoip
 RUN	go get github.com/fiorix/freegeoip
+
 WORKDIR /freegeoip/src/github.com/fiorix/freegeoip
 RUN	sed -i 's/xheaders="false"/xheaders="true"/g' freegeoip.conf
 RUN	go build
